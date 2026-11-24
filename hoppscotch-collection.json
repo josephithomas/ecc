@@ -1,0 +1,18 @@
+{
+  "v": 2,
+  "name": "ECC Fork Verification",
+  "folders": [],
+  "requests": [
+    {
+      "v": "1",
+      "name": "Check josephithomas/ecc Fork",
+      "method": "GET",
+      "endpoint": "<<GITHUB_API>>/repos/josephithomas/ecc",
+      "headers": [
+        { "key": "Accept", "value": "application/vnd.github+json", "active": true },
+        { "key": "User-Agent", "value": "hoppscotch-cli", "active": true }
+      ],
+      "testScript": "pw.test(\"Status is 200\", () => { pw.expect(pw.response.status).toBe(200); }); pw.test(\"Repo is a fork of affaan-m/ECC\", () => { const body = pw.response.body; pw.expect(body.fork).toBe(true); pw.expect(body.parent.full_name).toBe(\"affaan-m/ECC\"); });"
+    }
+  ]
+}

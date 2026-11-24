@@ -1,0 +1,7 @@
+{
+  "v": 1,
+  "name": "ECC Env",
+  "variables": [
+    { "key": "GITHUB_API", "value": "https://api.github.com", "secret": false }
+  ]
+}
